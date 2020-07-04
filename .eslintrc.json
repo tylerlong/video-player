@@ -1,4 +1,14 @@
 {
-  "extends": "./node_modules/gts/",
-  "env": {"browser": true}
+  "extends": [
+    "./node_modules/gts/", 
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // todo: it will default to "detect" in the future
+    }
+  }
 }

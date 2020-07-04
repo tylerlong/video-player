@@ -1,0 +1,9 @@
+html,
+body,
+#video-player {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@import '~antd/dist/antd.css';
