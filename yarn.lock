@@ -164,7 +164,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
-"@types/ramda@^0.27.6":
+"@types/ramda@^0.27.7":
   version "0.27.7"
   resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.27.7.tgz#9079faf78a41c25eb59deb46d59deb88a7949358"
   integrity sha512-qt8hYaKfgWE84S6elC8MokRza8sEVkmJqPUbKcl4qVhzryK4eya5ykucgNzzHFJt9hwDYpjtA8h7w2/VT/Gnqg==
@@ -178,7 +178,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.36", "@types/react@^16.9.41":
+"@types/react@*", "@types/react@^16.9.41":
   version "16.9.41"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.41.tgz#925137ee4d2ff406a0ecf29e8e9237390844002e"
   integrity sha512-6cFei7F7L4wwuM+IND/Q2cV1koQUvJ8iSV+Gwn0c3kvABZ691g7sp3hfEQHOUBJtccl1gPi+EyNjMIl9nGA0ug==
@@ -460,10 +460,20 @@ ajv-keywords@^3.1.0, ajv-keywords@^3.4.1:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.0.tgz#5c894537098785926d71e696114a53ce768ed773"
   integrity sha512-eyoaac3btgU8eJlvh01En8OCKzRqlLe2G5jDsCr3RiE2uLGMEEB1aaGwVVpwR8M95956tGH6R+9edC++OvzaVw==
 
-ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2:
+ajv@^6.1.0, ajv@^6.10.2, ajv@^6.12.2:
   version "6.12.2"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.2.tgz#c629c5eced17baf314437918d2da88c99d5958cd"
   integrity sha512-k+V+hzjm5q/Mr8ef/1Y9goCmlsK4I6Sm74teeyGvFk1XrOsbsKLjEdrvny42CZ+a8sXbk8KWpY/bDwS+FLL2UQ==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@^6.10.0:
+  version "6.12.3"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.3.tgz#18c5af38a111ddeb4f2697bd78d68abc1cabd706"
+  integrity sha512-4K0cK3L1hsqk9xIb2z9vs/XU+PGJZ9PNpJRDS9YLzmNdX6jmVPfamLvTJr0aDAusnHyCHO6MjzlkAsgtqp9teA==
   dependencies:
     fast-deep-equal "^3.1.1"
     fast-json-stable-stringify "^2.0.0"
@@ -4722,7 +4732,22 @@ rc-mentions@~1.3.0:
     rc-trigger "^4.3.0"
     rc-util "^5.0.1"
 
-rc-menu@^8.0.1, rc-menu@^8.2.1, rc-menu@~8.3.0:
+rc-menu@^8.0.1, rc-menu@^8.2.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/rc-menu/-/rc-menu-8.4.1.tgz#576855ce380b6e748d77f4a30d20581f8c7d1768"
+  integrity sha512-qVtEF83A8KuyhdiQKnMXH8zxkZxlm3nNXnN+d0rlHUa536rhocbTKZgg6+Q3z2R9HDbWn4ZgSq+o6i0DtqlkGQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    mini-store "^3.0.1"
+    omit.js "^1.0.2"
+    rc-animate "^3.1.0"
+    rc-trigger "^4.2.0"
+    rc-util "^5.0.1"
+    resize-observer-polyfill "^1.5.0"
+    shallowequal "^1.1.0"
+
+rc-menu@~8.3.0:
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/rc-menu/-/rc-menu-8.3.1.tgz#1ae8f27792de4734d29d2ec353410881ee65a00c"
   integrity sha512-4LNQ0zIL27yayQu9Xi3QOUB2yEqm5qSFwD9MzB1XnTo1JeLTLy3+D8Bm94rykvnhV6z5MYtalUTnM7ETfjExXQ==
@@ -4793,9 +4818,9 @@ rc-resize-observer@^0.2.0, rc-resize-observer@^0.2.1, rc-resize-observer@^0.2.3:
     resize-observer-polyfill "^1.5.1"
 
 rc-select@^11.0.4, rc-select@~11.0.0:
-  version "11.0.5"
-  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-11.0.5.tgz#fd581b737a5e29bed174236e89776662cae454b7"
-  integrity sha512-KGlOiduYpZ/7FZFKLZ0LR+ADnOYZWDTu/rSO//38mZ6afaprcRTBp1V0VKTHR71Oxt+Ws/zawM25DuN2FBlFqA==
+  version "11.0.6"
+  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-11.0.6.tgz#58f056769e8be834a58cb47b55250717880d5e3d"
+  integrity sha512-lCvl6n8DewXICPDvuGyHMyEhSCPYblkmUXi0fei6BfL+UI9Xk11LWOEf3zIOZu/y/jSt8RT3w8fghBaDotfWkg==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "2.x"
@@ -4835,9 +4860,9 @@ rc-switch@~3.2.0:
     rc-util "^5.0.1"
 
 rc-table@~7.8.0:
-  version "7.8.3"
-  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-7.8.3.tgz#ca7d2682fc34e16296f4d14965b327b4114f9fad"
-  integrity sha512-d+nCwb3/5nGWNOpLmSzJGVkJ8CEnyGZfYoTWETVvT6pTHesiFVy8ofFcEpUIG0jLoEvfiuVH1G54E+MF32UDxQ==
+  version "7.8.4"
+  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-7.8.4.tgz#493e6e8ccd9f078a073f0f7cf46bbb02c55f74d7"
+  integrity sha512-+8JPFD4oGy/4/VdXsPE/12oEkopiZoIi4cS6DJGzjf2CjhrM7KevUOjrs0MhFlXZp/Pnb8qSKoVdVHN1JYtL7Q==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.5"
@@ -4960,15 +4985,15 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-subx@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/react-subx/-/react-subx-0.7.2.tgz#10fba7833ee19e6455dba41204ba012c6b7acfdb"
-  integrity sha512-phrL3veyXTr6w1GCnH9vjQw59lJ/hnSkzxaNZHkvvJTWb1vwmeqjCCfNY9ybwrn37P4WWP+DrpQbBB3GRlwSXg==
+react-subx@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-subx/-/react-subx-0.8.0.tgz#bc1699471f1cab6636d346d135b6600423389dae"
+  integrity sha512-YuhwZnOSJvhScdL6S2y9bf0+ZImS7/Z0AVPiLfPxw2/H9p2Be2dUIfiWpT0FnPh8Frn1BfPycdt3leZ7XDFSIA==
   dependencies:
-    "@types/ramda" "^0.27.6"
-    "@types/react" "^16.9.36"
+    "@types/ramda" "^0.27.7"
+    "@types/react" "^16.9.41"
     ramda "^0.27.0"
-    rxjs "^6.5.5"
+    rxjs "^6.6.0"
 
 react@^16.13.1:
   version "16.13.1"
@@ -5248,7 +5273,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.5.5, rxjs@^6.6.0:
+rxjs@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.0.tgz#af2901eedf02e3a83ffa7f886240ff9018bbec84"
   integrity sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
@@ -5806,13 +5831,14 @@ style-loader@^1.2.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
 
-subx@^0.9.8:
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/subx/-/subx-0.9.8.tgz#8c2862df3b3bb458d9564f83b9859e78bd2203b8"
-  integrity sha512-R2/zWyhaikAj6dDcpM0FoxiVG3FQL1kHwEuuSKDtBLGmjEfRsoA1X0YGrr8QA+jZwmLASwyCCLIY50Mzs+mFfQ==
+subx@^0.9.11:
+  version "0.9.11"
+  resolved "https://registry.yarnpkg.com/subx/-/subx-0.9.11.tgz#86aef14c42b4712ac97668345896aa490b6a4726"
+  integrity sha512-Hnex8uw/KHmp3d/6QbVZBCkS6/oxF81YY/95xZkqwzwzIB0SO1RYU6LFseOuHgupVTkwXEJEbALigA+UDqMjMg==
   dependencies:
+    "@types/ramda" "^0.27.7"
     ramda "^0.27.0"
-    rxjs "^6.5.5"
+    rxjs "^6.6.0"
 
 supports-color@^5.3.0:
   version "5.5.0"

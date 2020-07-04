@@ -1,11 +1,10 @@
 import React from 'react';
-import {SubxObj} from 'subx/build/types';
 import {Component} from 'react-subx';
 import {Spin} from 'antd';
-import {StoreType} from './store';
+import store from './store';
 
 export interface Props {
-  store: SubxObj<StoreType>;
+  store: typeof store;
 }
 
 class App extends Component<Props> {
