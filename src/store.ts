@@ -50,6 +50,15 @@ const store = SubX.proxy<StoreType>({
     const videoElement = document.getElementById(
       'video-player'
     )! as HTMLVideoElement;
+
+    // release old devices
+    const oldStream = videoElement.srcObject as MediaStream;
+    if (oldStream !== null) {
+      for (const track of oldStream.getTracks()) {
+        track.stop();
+      }
+    }
+
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: {
         ...audioConstraints,
