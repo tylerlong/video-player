@@ -23,6 +23,9 @@ const videoConstraints = {
 };
 const audioConstraints = {
   channelCount: {ideal: 2},
+  autoGainControl: false,
+  echoCancellation: false,
+  noiseSuppression: false,
 };
 
 const store = SubX.proxy<StoreType>({
