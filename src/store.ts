@@ -40,11 +40,15 @@ const store = SubX.proxy<StoreType>({
         deviceId: {exact: (this.audioInput ?? this.audioInputs[0]).deviceId},
       },
       video: {
-        width: {min: 1920},
-        height: {min: 1080},
+        width: {ideal: 1920},
+        height: {ideal: 1080},
+        frameRate: {ideal: 60},
         deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
       },
     });
+    console.log(
+      JSON.stringify(stream.getVideoTracks()[0].getSettings(), null, 2)
+    );
     videoElement.srcObject = stream;
     videoElement.play();
   },
