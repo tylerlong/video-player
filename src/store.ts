@@ -37,10 +37,14 @@ const store = SubX.proxy<StoreType>({
     );
   },
   get videoInputs(): MediaDeviceInfo[] {
-    return this.devices.filter(d => d.kind === 'videoinput');
+    return this.devices.filter(
+      d => d.kind === 'videoinput' && d.deviceId !== 'default'
+    );
   },
   get audioInputs(): MediaDeviceInfo[] {
-    return this.devices.filter(d => d.kind === 'audioinput');
+    return this.devices.filter(
+      d => d.kind === 'audioinput' && d.deviceId !== 'default'
+    );
   },
   async play() {
     const videoElement = document.getElementById(
