@@ -1,6 +1,7 @@
 import SubX from 'subx';
 import {SubxObj} from 'subx/build/src/types';
 import {filter} from 'rxjs/operators';
+import * as R from 'ramda';
 
 export type StoreType = {
   ready: boolean;
@@ -53,14 +54,6 @@ const store = SubX.proxy<StoreType>({
       'video-player'
     )! as HTMLVideoElement;
 
-    // release old devices
-    const oldStream = videoElement.srcObject as MediaStream;
-    if (oldStream !== null) {
-      for (const track of oldStream.getTracks()) {
-        track.stop();
-      }
-    }
-
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: {
         ...audioConstraints,
@@ -73,10 +66,19 @@ const store = SubX.proxy<StoreType>({
     });
 
     // debug video/audio track quality
-    for (const track of stream.getTracks()) {
-      console.log(JSON.stringify(track.getSettings(), null, 2));
-    }
+    stream
+      .getTracks()
+      .forEach(t => console.log(JSON.stringify(t.getSettings(), null, 2)));
 
+    // release old device
+    const oldStream = videoElement.srcObject as MediaStream;
+    if (oldStream !== null) {
+      R.differenceWith(
+        (d1, d2) => d1.label === d2.label,
+        oldStream.getTracks(),
+        stream.getTracks()
+      ).forEach(t => t.stop());
+    }
     videoElement.srcObject = stream;
     videoElement.play();
     this.playing = true;
