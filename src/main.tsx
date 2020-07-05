@@ -27,7 +27,7 @@ class Main extends Component<PropsStore> {
           devices={store.audioInputs}
           onChange={d => (store.audioInput = d)}
         />
-        Video Output:{' '}
+        Audio Output:{' '}
         <Devices
           devices={store.audioOutputs}
           onChange={d => (store.audioOutput = d)}
