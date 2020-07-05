@@ -34,7 +34,12 @@ const config: webpack.Configuration = {
       title:
         'Video Player - play video and audio from your camera and microphone.',
     }),
-    new FaviconsWebpackPlugin('./favicon.png'),
+    new FaviconsWebpackPlugin({
+      logo: './favicon.png',
+      favicons: {
+        manifestRelativePaths: true,
+      },
+    }),
   ],
 };
 
