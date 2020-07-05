@@ -54,9 +54,12 @@ const store = SubX.proxy<StoreType>({
         deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
       },
     });
-    console.log(
-      JSON.stringify(stream.getVideoTracks()[0].getSettings(), null, 2)
-    );
+
+    // debug video/audio track quality
+    for (const track of stream.getTracks()) {
+      console.log(JSON.stringify(track.getSettings(), null, 2));
+    }
+
     videoElement.srcObject = stream;
     videoElement.play();
   },
