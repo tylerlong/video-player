@@ -16,3 +16,4 @@ Play video and audio from your camera and microphone.
     - audio channel count 2
 - test safari
     - no audio output device
+    - track has fewer settings

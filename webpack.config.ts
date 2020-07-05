@@ -8,12 +8,12 @@ const config: webpack.Configuration = {
   mode: 'development',
   devtool: 'source-map',
   entry: './src/index.tsx',
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-  },
   output: {
     path: path.join(__dirname, 'docs'),
-    publicPath: '',
+    publicPath: '', // I think default is '/'
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
   },
   module: {
     rules: [

@@ -1,9 +1,8 @@
 import React from 'react';
 import {Component} from 'react-subx';
-import {Spin, Button, Select, Form} from 'antd';
-import {StoreType} from './store';
+import {Spin, Button, Select, Form, Divider, Space} from 'antd';
 
-const {Option} = Select;
+import {StoreType} from './store';
 
 type PropsStore = {
   store: StoreType;
@@ -27,38 +26,42 @@ class Main extends Component<PropsStore> {
     return (
       <>
         <Form {...layout}>
-          <Form.Item label="Video Input">
-            <Devices
-              devices={store.videoInputs}
-              onChange={d => (store.videoInput = d)}
-            />
-          </Form.Item>
-          <Form.Item label="Audio Input">
-            <Devices
-              devices={store.audioInputs}
-              onChange={d => (store.audioInput = d)}
-            />
-          </Form.Item>
-          <Form.Item label="Audio Output">
-            <Devices
-              devices={store.audioOutputs}
-              onChange={d => (store.audioOutput = d)}
-            />
-          </Form.Item>
+          <Devices
+            label="Video Input"
+            devices={store.videoInputs}
+            onChange={d => (store.videoInput = d)}
+          />
+          <Devices
+            label="Audio Input"
+            devices={store.audioInputs}
+            onChange={d => (store.audioInput = d)}
+          />
+          <Devices
+            label="Audio Output"
+            devices={store.audioOutputs}
+            onChange={d => (store.audioOutput = d)}
+          />
           <Form.Item {...tailLayout}>
-            <Button
-              onClick={() => store.play()}
-              type="primary"
-              htmlType="button"
-            >
-              Play
-            </Button>
-            <Button onClick={() => store.fullscreen()} htmlType="button">
-              Fullscreen
-            </Button>
+            <Space>
+              <Button
+                onClick={() => store.play()}
+                type="primary"
+                htmlType="button"
+              >
+                Play
+              </Button>
+              <Button
+                onClick={() =>
+                  document.getElementById('video-player')!.requestFullscreen()
+                }
+                htmlType="button"
+              >
+                Fullscreen
+              </Button>
+            </Space>
           </Form.Item>
         </Form>
-        <hr />
+        <Divider />
         <video width="900" height="600" id="video-player"></video>
       </>
     );
@@ -67,22 +70,25 @@ class Main extends Component<PropsStore> {
 
 type PropsDevices = {
   devices: MediaDeviceInfo[];
+  label: string;
   onChange: (d: MediaDeviceInfo) => void;
 };
 class Devices extends Component<PropsDevices> {
   render() {
-    const {devices, onChange} = this.props;
+    const {devices, label, onChange} = this.props;
     return (
-      <Select
-        defaultValue={devices[0].deviceId}
-        onChange={v => onChange(devices.find(d => d.deviceId === v)!)}
-      >
-        {devices.map(d => (
-          <Option key={d.deviceId} value={d.deviceId}>
-            {d.label}
-          </Option>
-        ))}
-      </Select>
+      <Form.Item label={label}>
+        <Select
+          defaultValue={devices[0].deviceId}
+          onChange={v => onChange(devices.find(d => d.deviceId === v)!)}
+        >
+          {devices.map(d => (
+            <Select.Option key={d.deviceId} value={d.deviceId}>
+              {d.label}
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
     );
   }
 }
