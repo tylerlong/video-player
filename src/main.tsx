@@ -36,11 +36,6 @@ class Main extends Component<PropsStore> {
             devices={store.audioInputs}
             onChange={d => (store.audioInput = d)}
           />
-          <Devices
-            label="Audio Output"
-            devices={store.audioOutputs}
-            onChange={d => (store.audioOutput = d)}
-          />
           <Form.Item {...tailLayout}>
             <Space>
               <Button

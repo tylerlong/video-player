@@ -6,10 +6,8 @@ export type StoreType = {
   devices: MediaDeviceInfo[];
   videoInput?: MediaDeviceInfo;
   audioInput?: MediaDeviceInfo;
-  audioOutput?: MediaDeviceInfo;
   videoInputs: MediaDeviceInfo[];
   audioInputs: MediaDeviceInfo[];
-  audioOutputs: MediaDeviceInfo[];
   init: () => void;
   play: () => void;
   pause: () => void;
@@ -43,9 +41,6 @@ const store = SubX.proxy<StoreType>({
   },
   get audioInputs(): MediaDeviceInfo[] {
     return this.devices.filter(d => d.kind === 'audioinput');
-  },
-  get audioOutputs(): MediaDeviceInfo[] {
-    return this.devices.filter(d => d.kind === 'audiooutput');
   },
   async play() {
     const videoElement = document.getElementById(
