@@ -32,7 +32,12 @@ class Main extends Component<PropsStore> {
           devices={store.audioOutputs}
           onChange={d => (store.audioOutput = d)}
         />
-        <Button onClick={() => store.play()}>Play</Button>
+        <Button onClick={() => store.play()} type="primary">
+          Play
+        </Button>
+        <Button onClick={() => store.fullscreen()} type="primary">
+          Fullscreen
+        </Button>
         <hr />
         <video width="900" height="600" id="video-player"></video>
       </>

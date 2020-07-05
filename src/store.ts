@@ -11,6 +11,7 @@ export type StoreType = {
   audioInputs: MediaDeviceInfo[];
   audioOutputs: MediaDeviceInfo[];
   play: () => void;
+  fullscreen: () => void;
 };
 
 const store = SubX.proxy<StoreType>({
@@ -44,6 +45,9 @@ const store = SubX.proxy<StoreType>({
     });
     videoElement.srcObject = stream;
     videoElement.play();
+  },
+  async fullscreen() {
+    document.getElementById('video-player')!.requestFullscreen();
   },
 });
 
