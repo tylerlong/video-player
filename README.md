@@ -17,3 +17,5 @@ Play video and audio from your camera and microphone.
 - test safari
     - no audio output device
     - track has fewer settings
+- send pause signal to source track?
+- switch audio output

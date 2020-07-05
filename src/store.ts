@@ -2,6 +2,7 @@ import SubX from 'subx';
 
 export type StoreType = {
   ready: boolean;
+  playing: boolean;
   devices: MediaDeviceInfo[];
   videoInput?: MediaDeviceInfo;
   audioInput?: MediaDeviceInfo;
@@ -11,6 +12,7 @@ export type StoreType = {
   audioOutputs: MediaDeviceInfo[];
   init: () => void;
   play: () => void;
+  pause: () => void;
 };
 
 const videoConstraints = {
@@ -24,6 +26,7 @@ const audioConstraints = {
 
 const store = SubX.proxy<StoreType>({
   ready: false,
+  playing: false,
   devices: [],
   async init() {
     // request permissions
@@ -66,6 +69,11 @@ const store = SubX.proxy<StoreType>({
 
     videoElement.srcObject = stream;
     videoElement.play();
+    this.playing = true;
+  },
+  pause() {
+    (document.getElementById('video-player')! as HTMLVideoElement).pause();
+    this.playing = false;
   },
 });
 

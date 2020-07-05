@@ -44,11 +44,11 @@ class Main extends Component<PropsStore> {
           <Form.Item {...tailLayout}>
             <Space>
               <Button
-                onClick={() => store.play()}
+                onClick={() => (store.playing ? store.pause() : store.play())}
                 type="primary"
                 htmlType="button"
               >
-                Play
+                {store.playing ? 'Pause' : 'Play'}
               </Button>
               <Button
                 onClick={() =>
