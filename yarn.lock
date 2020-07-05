@@ -4985,10 +4985,10 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-subx@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-subx/-/react-subx-0.8.0.tgz#bc1699471f1cab6636d346d135b6600423389dae"
-  integrity sha512-YuhwZnOSJvhScdL6S2y9bf0+ZImS7/Z0AVPiLfPxw2/H9p2Be2dUIfiWpT0FnPh8Frn1BfPycdt3leZ7XDFSIA==
+react-subx@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/react-subx/-/react-subx-0.8.2.tgz#7f9199cfee5d78d1e03b7764fa47835b99cf7b50"
+  integrity sha512-gCCvcqi5Clku47KiQ6ZP+3T5vecnGvGnzcP//XXkD7N7pj1XPb2KHWpK92sEL0MeiTy1/cR4qdvOvrzZKLkGOw==
   dependencies:
     "@types/ramda" "^0.27.7"
     "@types/react" "^16.9.41"
@@ -5831,10 +5831,10 @@ style-loader@^1.2.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
 
-subx@^0.9.11:
-  version "0.9.11"
-  resolved "https://registry.yarnpkg.com/subx/-/subx-0.9.11.tgz#86aef14c42b4712ac97668345896aa490b6a4726"
-  integrity sha512-Hnex8uw/KHmp3d/6QbVZBCkS6/oxF81YY/95xZkqwzwzIB0SO1RYU6LFseOuHgupVTkwXEJEbALigA+UDqMjMg==
+subx@^0.9.14:
+  version "0.9.14"
+  resolved "https://registry.yarnpkg.com/subx/-/subx-0.9.14.tgz#cd0807c180addbe2014c99b7baaa964a05bcdd30"
+  integrity sha512-DKTvGz1e2yg/mdksAM2X/wcYWJ8Kqw2EvAFdsiH/vnuFXWmTu9hajxh2pTBJi69okgAJc/A/75bJDLuiLqk7iQ==
   dependencies:
     "@types/ramda" "^0.27.7"
     ramda "^0.27.0"
