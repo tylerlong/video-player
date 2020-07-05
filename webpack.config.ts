@@ -13,6 +13,7 @@ const config: webpack.Configuration = {
   },
   output: {
     path: path.join(__dirname, 'docs'),
+    publicPath: '',
   },
   module: {
     rules: [
