@@ -1,1 +1,6 @@
 @import '~antd/dist/antd.css';
+
+#video-player {
+  margin: 0 auto;
+  display: block;
+}

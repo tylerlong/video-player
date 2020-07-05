@@ -34,7 +34,7 @@ class Main extends Component<PropsStore> {
         />
         <Button onClick={() => store.play()}>Play</Button>
         <hr />
-        <video width="800" height="600" id="video-player"></video>
+        <video width="900" height="600" id="video-player"></video>
       </>
     );
   }
