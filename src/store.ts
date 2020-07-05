@@ -40,6 +40,8 @@ const store = SubX.proxy<StoreType>({
         deviceId: {exact: (this.audioInput ?? this.audioInputs[0]).deviceId},
       },
       video: {
+        width: {min: 1920},
+        height: {min: 1080},
         deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
       },
     });
