@@ -18,6 +18,7 @@ const store = SubX.proxy<StoreType>({
   ready: false,
   devices: [],
   async init() {
+    await navigator.mediaDevices.getUserMedia({audio: true, video: true}); // request permission
     this.devices = (await navigator.mediaDevices.enumerateDevices()).map(d =>
       d.toJSON()
     );
