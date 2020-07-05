@@ -18,7 +18,14 @@ const store = SubX.proxy<StoreType>({
   ready: false,
   devices: [],
   async init() {
-    await navigator.mediaDevices.getUserMedia({audio: true, video: true}); // request permission
+    await navigator.mediaDevices.getUserMedia({
+      audio: true,
+      video: {
+        width: {ideal: 1920},
+        height: {ideal: 1080},
+        frameRate: {ideal: 60},
+      },
+    }); // request permission
     this.devices = (await navigator.mediaDevices.enumerateDevices()).map(d =>
       d.toJSON()
     );
@@ -47,6 +54,9 @@ const store = SubX.proxy<StoreType>({
         deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
       },
     });
+    console.log(
+      JSON.stringify(stream.getVideoTracks()[0].getSettings(), null, 2)
+    );
     videoElement.srcObject = stream;
     videoElement.play();
   },
