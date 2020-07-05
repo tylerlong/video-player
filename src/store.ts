@@ -1,4 +1,6 @@
 import SubX from 'subx';
+import {SubxObj} from 'subx/build/src/types';
+import {filter} from 'rxjs/operators';
 
 export type StoreType = {
   ready: boolean;
@@ -83,6 +85,17 @@ const store = SubX.proxy<StoreType>({
     (document.getElementById('video-player')! as HTMLVideoElement).pause();
     this.playing = false;
   },
+});
+
+(store as SubxObj<StoreType>).$.pipe(
+  filter(
+    e =>
+      store.playing &&
+      e.path.length === 1 &&
+      ['videoInput', 'audioInput'].includes(e.path[0])
+  )
+).subscribe(() => {
+  store.play();
 });
 
 export default store;

@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-subx": "^0.8.2",
+    "rxjs": "^6.6.0",
     "subx": "^0.9.14"
   },
   "devDependencies": {
