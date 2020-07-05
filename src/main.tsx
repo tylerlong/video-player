@@ -35,9 +35,7 @@ class Main extends Component<PropsStore> {
         <Button onClick={() => store.play()} type="primary">
           Play
         </Button>
-        <Button onClick={() => store.fullscreen()} type="primary">
-          Fullscreen
-        </Button>
+        <Button onClick={() => store.fullscreen()}>Fullscreen</Button>
         <hr />
         <video width="900" height="600" id="video-player"></video>
       </>
