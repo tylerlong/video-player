@@ -30,13 +30,20 @@ const store = SubX.proxy<StoreType>({
   get audioOutputs(): MediaDeviceInfo[] {
     return this.devices.filter(d => d.kind === 'audiooutput');
   },
-  play() {
-    console.log(
-      'play',
-      (this.videoInput ?? this.videoInputs[0]).toJSON(),
-      (this.audioInput ?? this.audioInputs[0]).toJSON(),
-      (this.audioOutput ?? this.audioInputs[0]).toJSON()
-    );
+  async play() {
+    const videoElement = document.getElementById(
+      'video-player'
+    )! as HTMLVideoElement;
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: {
+        deviceId: {exact: (this.audioInput ?? this.audioInputs[0]).deviceId},
+      },
+      video: {
+        deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
+      },
+    });
+    videoElement.srcObject = stream;
+    videoElement.play();
   },
 });
 

@@ -1,6 +1,7 @@
 /* eslint-disable node/no-unpublished-import */
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import path from 'path';
 
 const config: webpack.Configuration = {
@@ -33,6 +34,7 @@ const config: webpack.Configuration = {
       title:
         'Video Player - play video and audio from your camera and microphone.',
     }),
+    new FaviconsWebpackPlugin('./favicon.png'),
   ],
 };
 
