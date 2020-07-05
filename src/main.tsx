@@ -29,12 +29,22 @@ class Main extends Component<PropsStore> {
           <Devices
             label="Video Input"
             devices={store.videoInputs}
-            onChange={d => (store.videoInput = d)}
+            onChange={d => {
+              store.videoInput = d;
+              if (store.playing) {
+                store.play();
+              }
+            }}
           />
           <Devices
             label="Audio Input"
             devices={store.audioInputs}
-            onChange={d => (store.audioInput = d)}
+            onChange={d => {
+              store.audioInput = d;
+              if (store.playing) {
+                store.play();
+              }
+            }}
           />
           <Form.Item {...tailLayout}>
             <Space>
