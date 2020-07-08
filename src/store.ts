@@ -48,20 +48,33 @@ const store = SubX.proxy<StoreType>({
     );
   },
   get audioInputs(): MediaDeviceInfo[] {
-    return this.devices.filter(
-      d => d.kind === 'audioinput' && d.deviceId !== 'default'
-    );
+    return [
+      ...this.devices.filter(
+        d => d.kind === 'audioinput' && d.deviceId !== 'default'
+      ),
+      {
+        label: 'Disable',
+        deviceId: 'none',
+        kind: 'audioinput',
+        groupId: 'none',
+        toJSON: () => undefined,
+      },
+    ];
   },
   async play() {
     const videoElement = document.getElementById(
       'video-player'
     )! as HTMLVideoElement;
 
+    const audioInput = this.audioInput ?? this.audioInputs[0];
     const stream = await navigator.mediaDevices.getUserMedia({
-      audio: {
-        ...audioConstraints,
-        deviceId: {exact: (this.audioInput ?? this.audioInputs[0]).deviceId},
-      },
+      audio:
+        audioInput.deviceId === 'none'
+          ? false
+          : {
+              ...audioConstraints,
+              deviceId: {exact: audioInput.deviceId},
+            },
       video: {
         ...videoConstraints,
         deviceId: {exact: (this.videoInput ?? this.videoInputs[0]).deviceId},
