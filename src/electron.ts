@@ -1,5 +1,6 @@
 // eslint-disable-next-line node/no-unpublished-import
 import {app, BrowserWindow} from 'electron';
+import path from 'path';
 
 let browserWindow: BrowserWindow | undefined;
 
@@ -11,10 +12,13 @@ const createWindow = () => {
       nodeIntegration: false,
     },
   });
-  browserWindow.loadURL('https://chuntaoliu.com/video-player/');
+  browserWindow.loadURL(
+    path.join('file://', __dirname, '..', '..', 'docs', 'index.html')
+  );
   browserWindow.on('closed', () => {
     browserWindow = undefined;
   });
+  browserWindow.setAlwaysOnTop(true);
 };
 
 app.on('ready', () => {
