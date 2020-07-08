@@ -32,7 +32,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (browserWindow === null) {
+  if (browserWindow === undefined) {
     createWindow();
   }
 });
