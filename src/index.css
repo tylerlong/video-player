@@ -1,6 +1,11 @@
 @import '~antd/dist/antd.css';
 
+html, body {
+  height: 100%;
+}
+
 #video-player {
   margin: 0 auto;
   display: block;
+  height: 100vh;
 }

@@ -57,7 +57,7 @@ class Main extends Component<PropsStore> {
           </Form.Item>
         </Form>
         <Divider />
-        <video width="960" height="540" id="video-player"></video>
+        <video id="video-player"></video>
       </>
     );
   }
