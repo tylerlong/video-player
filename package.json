@@ -67,8 +67,7 @@
     ],
     "mac": {
       "category": "public.app-category.video",
-      "entitlements": "src/entitlements.mac.plist",
-      "hardenedRuntime": true
+      "entitlements": "src/entitlements.mac.plist"
     },
     "dmg": {
       "contents": [
