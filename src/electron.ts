@@ -6,8 +6,8 @@ let browserWindow: BrowserWindow | undefined;
 
 const createWindow = () => {
   browserWindow = new BrowserWindow({
-    width: 1280,
-    height: 800,
+    width: 920,
+    height: 540,
     webPreferences: {
       nodeIntegration: false,
     },
