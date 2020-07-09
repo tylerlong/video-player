@@ -8,4 +8,5 @@ html, body {
   margin: 0 auto;
   display: block;
   height: 100vh;
+  -webkit-app-region: drag;
 }

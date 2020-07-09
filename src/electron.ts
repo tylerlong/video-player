@@ -11,6 +11,7 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: false,
     },
+    frame: false,
   });
   browserWindow.loadURL(
     path.join('file://', __dirname, '..', '..', 'docs', 'index.html')
