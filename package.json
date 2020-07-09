@@ -1,14 +1,23 @@
 {
+  "name": "video-player",
+  "version": "0.1.0",
+  "private": true,
   "license": "MIT",
   "description": "Video Player - play video and audio from your camera and microphone.",
   "main": "build/src/electron.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "release": "webpack --progress --colors -p",
-    "app": "electron ."
+    "app": "electron .",
+    "build": "rm -rf dist && electron-builder build --mac"
   },
   "engines": {
     "node": ">=10.x"
+  },
+  "repository": "git@github.com:tylerlong/video-player.git",
+  "author": {
+    "name": "Tyler Long",
+    "email": "tyler4long@gmail.com"
   },
   "dependencies": {
     "antd": "^4.4.0",
@@ -27,6 +36,7 @@
     "@types/webpack": "^4.41.18",
     "css-loader": "^3.6.0",
     "electron": "^9.1.0",
+    "electron-builder": "^22.7.0",
     "eslint-plugin-react": "^7.20.3",
     "favicons-webpack-plugin": "^3.0.1",
     "gts": "^2.0.2",
@@ -44,5 +54,36 @@
     "ignore": [
       "@types/node"
     ]
+  },
+  "build": {
+    "appId": "video-player.chuntaoliu.com",
+    "productName": "Video Player",
+    "files": [
+      "build/src/electron.js",
+      "docs/index.html",
+      "docs/main.js",
+      "docs/assets/**",
+      "!node_modules${/*}"
+    ],
+    "mac": {
+      "category": "public.app-category.video",
+      "entitlements": "src/entitlements.mac.plist",
+      "hardenedRuntime": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 128,
+          "y": 160
+        },
+        {
+          "x": 384,
+          "y": 160,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "compression": "maximum"
   }
 }
