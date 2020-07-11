@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "name": null,
+  "version": "0.1.0",
+  "name": "video-player",
   "description": "Video Player - play video and audio from your camera and microphone.",
   "icons": {
     "60": "firefox_app_60x60.png",
@@ -8,7 +8,7 @@
     "512": "firefox_app_512x512.png"
   },
   "developer": {
-    "name": null,
+    "name": "Tyler Long",
     "url": null
   }
 }

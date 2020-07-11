@@ -1,6 +1,6 @@
 {
-  "name": null,
-  "short_name": null,
+  "name": "video-player",
+  "short_name": "video-player",
   "description": "Video Player - play video and audio from your camera and microphone.",
   "dir": "auto",
   "lang": "en-US",

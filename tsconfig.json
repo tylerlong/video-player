@@ -5,7 +5,8 @@
     "outDir": "build",
     "esModuleInterop": true,
     "lib": ["DOM"],
-    "jsx": "react"
+    "jsx": "react",
+    "resolveJsonModule": true
   },
   "include": [
     "src/**/*.ts",
