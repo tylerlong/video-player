@@ -1,10 +1,10 @@
 {
   "name": "video-player",
-  "version": "0.1.0",
+  "version": "0.3.2",
   "private": true,
   "license": "MIT",
   "description": "Video Player - play video and audio from your camera and microphone.",
-  "main": "build/src/electron.js",
+  "main": "build/electron.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "release": "webpack --progress --colors -p",
@@ -18,7 +18,8 @@
   "repository": "git@github.com:tylerlong/video-player.git",
   "author": {
     "name": "Tyler Long",
-    "email": "tyler4long@gmail.com"
+    "email": "tyler4long@gmail.com",
+    "url": "https://github.com/tylerlong"
   },
   "dependencies": {
     "antd": "^4.4.1",
@@ -65,8 +66,7 @@
     "appId": "video-player.chuntaoliu.com",
     "productName": "Video Player",
     "files": [
-      "build/src/electron.js",
-      "build/src/menu.js",
+      "build/electron.js",
       "docs/index.html",
       "docs/main.js",
       "docs/assets/**",

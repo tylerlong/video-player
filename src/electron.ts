@@ -25,7 +25,7 @@ const createWindow = () => {
     frame: false,
   });
   browserWindow.loadURL(
-    path.join('file://', __dirname, '..', '..', 'docs', 'index.html')
+    path.join('file://', __dirname, '..', 'docs', 'index.html')
   );
   browserWindow.on('closed', () => {
     browserWindow = undefined;

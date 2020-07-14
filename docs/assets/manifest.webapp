@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.3.2",
   "name": "video-player",
   "description": "Video Player - play video and audio from your camera and microphone.",
   "icons": {
@@ -9,6 +9,6 @@
   },
   "developer": {
     "name": "Tyler Long",
-    "url": null
+    "url": "https://github.com/tylerlong"
   }
 }
